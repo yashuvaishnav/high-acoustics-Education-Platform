@@ -20,3 +20,4 @@ function Navbar() {
 }
 
 export default Navbar;
+console.log("yash")
