@@ -1,13 +1,15 @@
 
 import './App.css';
 // import { Text } from "@chakra-ui/react"
-import Navbar from './Components/Navbar';
+
+import Header from './Components/Header';
+import Main from './Components/Main';
 
 function App() {
   return (
     <div className="App">
+      <Main />
       
-      <Navbar />
     </div>
   );
 }
