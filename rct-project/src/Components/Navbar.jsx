@@ -1,23 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Center, Flex } from "@chakra-ui/react"
+import {  Flex,Text,Button } from "@chakra-ui/react"
+import { MdSchool } from "react-icons/md"
+
  
-const links = [
-  { to: "/", title: "Home" },
-  { to: "/blog", title: "Blog" },
-  { to: "/courses", title: "Courses" },
-  { to: "/login", title: "Login" },
-  { to: "/signup", title: "Singup" }
-];
+
 function Navbar() {
-  return <Flex justifyContent={"space-around"} background={"gray"} color={"white"} height={"50px"} align={"center"}>
-    {
-        links.map((item)=>(
-            <Link key={item.to} to={item.to}>{item.title}</Link>
-        ))
-    }
-  </Flex>;
+  return <Flex justifyContent={"space-around"} height={"50px"} alignItems={"center"} pt={50}>
+  <Flex width={200} justifyContent={"space-around"}>
+  <Link to="/">Home</Link>
+  <Link to="/blog">Blog</Link>
+  <Link to="courses">Courses</Link>
+  </Flex>
+  <Flex alignItems={"center"}><MdSchool style={{width:"100px",height:"50px",display:"inline"}}/><Text style={{display:"inline"}}>YÄSĦU</Text></Flex>
+  <Flex width={200} justifyContent={"space-around"} alignItems={"center"}>
+  <Link to="login" >Log In</Link>
+  <Button borderRadius={50} background={"blackAlpha.800"} color={"white"} alignItems={"center"}>Sign Up</Button>
+  </Flex>
+</Flex>
 }
 
 export default Navbar;
-console.log("yash")
+
