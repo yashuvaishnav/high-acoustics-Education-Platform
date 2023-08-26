@@ -6,4 +6,4 @@ function Singup() {
   )
 }
 
-export default Singup
+export { Singup }

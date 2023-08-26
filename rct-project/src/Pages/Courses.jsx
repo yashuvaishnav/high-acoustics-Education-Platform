@@ -6,4 +6,4 @@ function Courses() {
   )
 }
 
-export default Courses
+export { Courses }
