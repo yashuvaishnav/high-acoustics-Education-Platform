@@ -17,7 +17,7 @@ function Main() {
         <SpecialFeature />
         <PopularCourses />
         <Learning />
-        <OrderNow />
+        {/* <OrderNow /> */} 
         <MobileApp />
     </Box>
   )

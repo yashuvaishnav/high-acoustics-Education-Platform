@@ -1,11 +1,13 @@
 import { Box, GridItem, Heading,Grid,Text,Flex,Image } from '@chakra-ui/react'
 import React from 'react'
 import { blogData } from '../constent'
+import Footer from '../Components/Footer'
 
 function Blog() {
   return (
   
     <Box pt={"50px"}>
+      <Box mb={"50px"}>
       <Grid templateColumns="repeat(3, 1fr)" gap={8} w={"80%"} m={"auto"}>
         {
           blogData.map((item)=>(
@@ -25,6 +27,8 @@ function Blog() {
           ))
         }
       </Grid>
+      </Box>
+      <Footer />
     </Box>
   )
 }

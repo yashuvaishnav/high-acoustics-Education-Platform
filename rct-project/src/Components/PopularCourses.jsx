@@ -12,24 +12,32 @@ import React from "react";
 import { popular } from "../constent";
 import { BsStarFill } from "react-icons/bs";
 import { TfiTimer } from "react-icons/tfi";
+import { useNavigate } from "react-router-dom";
 
 function PopularCourses() {
+
+  const navigate = useNavigate()
+
+  const handleViewCourses = () => {
+    navigate("/courses")
+  }
+
   return (
-    <Box bg={"#242124"} p={"100px"} >
+    <Box bg={"#242124"} p={"6.2rem"} >
       <Flex justifyContent={"center"}>
-      <Heading as={"h2"} size="3xl" fontWeight={"semibold"} color={"white"} mb={"60px"} alignItems={"center"}
-      mr={"10px"}>
+      <Heading as={"h2"} size="3xl" fontWeight={"semibold"} color={"white"} mb={"3.8rem"} alignItems={"center"}
+      mr={".6rem"}>
         Popular
       </Heading>
-      <Button bg={"#242124"} pt={"30px"} pb={"40px"} pl={"5px"} pr={'5px'} color={"#ffc87c"} borderRadius={50} fontSize="55px" border={"2px solid #ffc87c"} fontWeight={"semibold"}>
+      <Button bg={"#242124"} pt={"2rem"} pb={"2.5rem"} pl={"5px"} pr={'5px'} color={"#ffc87c"} borderRadius="3rem" fontSize="3.5rem" border={"2px solid #ffc87c"} fontWeight={"semibold"}>
           <i>Courses</i>
         </Button>
       </Flex>
 
-      <Grid templateColumns="repeat(3, 1fr)" gap={12}>
+      <Grid templateColumns={{base:"repeat(1, 1fr)",sm:"repeat(2, 1fr)",lg:"repeat(3, 1fr)"}} gap={12}>
         {popular.map((item) => (
-          <GridItem w="100%" p={"40px"} bg={"white"} borderRadius="20px">
-            <Image src={item.image} w={"300px"} h={"250px"} margin={"auto"} />
+          <GridItem w="100%" p={"2.5rem"} bg={"white"} borderRadius="1.2rem">
+            <Image src={item.image} w={"18.8rem"} h={"16rem"} />
             <Flex
               justifyContent={"space-between"}
               alignItems={"center"}
@@ -38,15 +46,12 @@ function PopularCourses() {
               <Box display="flex" alignItems={"center"}>
                 <BsStarFill
                   style={{
-                    
                     color: "#f9ea2e",
                     display: "inline",
-                    height: "30px",
-                    width: "30px",
-                    marginRight: "5px",
+                    height: "2%",
                   }}
                 />
-                <Text mr={"5px"}>{item.rating}</Text>
+                <Text mr={"5px"} ml={"5px"}>{item.rating}</Text>
                 <Text color={"#5c685c"}>{item.review}</Text>
               </Box>
               <Box display="flex" alignItems={"center"}>
@@ -63,8 +68,8 @@ function PopularCourses() {
               colorScheme="black"
               variant="outline"
               color="black"
-              borderRadius="50px"
-              p={"25px"}
+              borderRadius="3rem"
+              p={"1.5rem"} onClick={handleViewCourses}
             >
               {item.btnText}
             </Button>
