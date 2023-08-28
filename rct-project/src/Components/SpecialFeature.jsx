@@ -8,10 +8,10 @@ import { MdOndemandVideo } from "react-icons/md"
 
 function SpecialFeature() {
   return (
-    <Box bg={"#fffffa"}pt={"150px"} pb={"150px"}>
-      <Grid h='700px' templateRows='repeat(2, 1fr)' templateColumns='repeat(3, 1fr)' gap={12} width={"80%"}margin={"auto"} >
+    <Box bg={"#fffffa"} pt={"9.7rem"} pb={"9.7rem"}>
+      <Grid templateRows={{base:'repeat(3, 1fr)',sm:'repeat(3, 1fr)',lg:'repeat(2, 1fr)'}} templateColumns={{base:'repeat(2, 1fr)',sm:'repeat(2, 1fr)',lg:'repeat(3, 1fr)'}} gap={12} width={"80%"}margin={"auto"} >
     
-    <GridItem rowSpan={1} colSpan={2} bg='#242124' borderRadius={"19px"} border={"1px solid black"} p="50px" >
+    <GridItem rowSpan={1} colSpan={2} bg='#242124' borderRadius={"19px"} border={"1px solid black"} p="3rem" >
       <Flex lineHeight="1" align={"center"}>
       <Text pr={"15px"} fontWeight={"semibold"} fontSize='6xl' color={"#fff"}>Our</Text>
       <Text fontSize='5xl' fontWeight={"semibold"} color={"#ffe5b4"} display={"inline"}><i>Features</i></Text>
