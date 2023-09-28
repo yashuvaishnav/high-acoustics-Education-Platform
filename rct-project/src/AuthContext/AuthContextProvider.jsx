@@ -6,10 +6,11 @@ const AuthContext = createContext();
 
 export function AuthContextProvider({ children }) {
   const [user, setUser] = useState(null);
+  const [userLoggedIn,setUserLoggedIn] = useState(false)
 
   const login = async (email, password) => {
     try {
-      const response = await fetch("http://localhost:3001/users");
+      const response = await fetch("https://cute-ruby-jay.cyclic.app/users");
       const users = await response.json();
 
       const authenticatedUser = users.find(
@@ -18,6 +19,7 @@ export function AuthContextProvider({ children }) {
 
       if (authenticatedUser) {
         setUser(authenticatedUser);
+        setUserLoggedIn(true)
       } else {
         throw new Error("Invalid credentials");
       }
@@ -25,10 +27,10 @@ export function AuthContextProvider({ children }) {
       throw new Error("Login failed");
     }
   };
-
+console.log(user)
   const signup = async (email, password) => {
     try {
-      const response = await fetch("http://localhost:3001/users", {
+      const response = await fetch("https://cute-ruby-jay.cyclic.app/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -49,7 +51,7 @@ export function AuthContextProvider({ children }) {
 
   const checkIfUserExists = async (email) => {
     try {
-      const response = await fetch("http://localhost:3001/users");
+      const response = await fetch("https://cute-ruby-jay.cyclic.app/users");
       const users = await response.json();
 
       return users.some((user) => user.email === email);
@@ -59,11 +61,12 @@ export function AuthContextProvider({ children }) {
   };
   const logout = () => {
     setUser(null);
+    setUserLoggedIn(false)
   };
 
   return (
     <AuthContext.Provider
-      value={{ user, login, signup, logout, checkIfUserExists }}
+      value={{ user, login, signup, logout, checkIfUserExists,userLoggedIn }}
     >
       {children}
     </AuthContext.Provider>

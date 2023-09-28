@@ -5,8 +5,8 @@ import { MdSchool } from "react-icons/md";
 import { useAuth } from "../AuthContext/AuthContextProvider";
 
 function Navbar() {
-const {user,logout} = useAuth()
-
+const {user,logout,userLoggedIn} = useAuth()
+console.log(user)
 const handleLogout = () => {
   logout()
 }
@@ -24,7 +24,7 @@ const handleLogout = () => {
         /></Link>
         <Text fontWeight="bold" fontSize="1.6rem" style={{ display: "inline" }}><Link to={"/"}>YÄSĦU</Link></Text>
       </Flex>
-      {user ? <Button onClick={handleLogout} colorScheme="red">Logout</Button>:
+      {userLoggedIn ? <Button onClick={handleLogout} colorScheme="red">Logout</Button>:
        <Flex width="20%" justifyContent={"space-around"} alignItems={"center"} fontWeight="500" fontSize="1.1rem">
        <Link to="login">Log In</Link>
        <Button borderRadius={50} background={"blackAlpha.800"} color={"white"} alignItems={"center"} p={"1.6rem"} fontSize={"1.1rem"} _hover={"none"}>
