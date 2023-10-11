@@ -22,7 +22,7 @@ const handleLogout = () => {
         <Link to={"/"}><MdSchool
           style={{ width: "6.3rem", height: "3.1rem", display: "inline" }}
         /></Link>
-        <Text fontWeight="bold" fontSize="1.6rem" style={{ display: "inline" }}><Link to={"/"}>YÄSĦU</Link></Text>
+        <Text fontWeight="bold" fontSize="1.6rem" style={{ display: "inline" }}><Link to={"/"}>AcademiaIQ</Link></Text>
       </Flex>
       {userLoggedIn ? <Button onClick={handleLogout} colorScheme="red">Logout</Button>:
        <Flex width="20%" justifyContent={"space-around"} alignItems={"center"} fontWeight="500" fontSize="1.1rem">

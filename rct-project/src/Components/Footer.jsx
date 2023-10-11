@@ -9,7 +9,7 @@ function Footer() {
     <Box background={"#242124"} width={"85%"} m={"auto"} p={"2.5rem"} color={"white"} borderTopRightRadius={"50px"} borderTopLeftRadius={"3.1rem"}>
       <Flex  justifyContent={"space-between"} mb={"3.8rem"}>
         <Box>
-        <Flex alignItems={"center"}><MdSchool style={{width:"6.2rem",height:"3.1rem",display:"inline"}}/><Text display={"inline"}>YÄSĦU</Text></Flex><br />
+        <Flex alignItems={"center"}><MdSchool style={{width:"6.2rem",height:"3.1rem",display:"inline"}}/><Text display={"inline"}>AcademiaIQ</Text></Flex><br />
         <Text>Speed up the skill acquisite process by <br />finding unlimited courses that matches your <br />niche.</Text>
         </Box>
         <Box display={{base:"block",sm:"block",lg:"flex"}} width={"50%"} justifyContent={"space-between"} >
